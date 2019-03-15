@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // 3种方式定义函数
+        
+        // 1 function 语句式
+
+        /* function test1() {  // 优先解析  静态
+            alert('我是函数的执行体')
+        }
+
+        // 2 函数的直接量形式 ECMAScript
+
+        var test2 = function(){ // 顺序解析  静态
+            console.log('我是test2')
+        }
+
+        // 3. function 构造函数式
+        var test3 = new Function("a","b", "return a + b;")   // 顺序解析  动态 */
+
+        //console.log(test3(10, 20))
+
+       /*  var d1 = new Date();
+        var t1 = d1.getTime();
+
+        for(var i = 0; i< 100000; i++) {
+            //function test1() {};   // function 语句
+            //var test2 = new Function();  // 构造函数式
+        }
+
+        var d2 = new Date();
+        var t2 = d2.getTime(); */
+
+        //console.log(t2 - t1)
+        //alert(t2-t1)
+
+        // 4 2 3 3 5 6
+
+       /*  function f(){ return 1}
+        console.log(f())  // 4  第一个函数被第4个覆盖
+        var f = new Function("return 2")
+        console.log(f());
+
+        var f = function() {return 3}
+        console.log(f());
+        function f(){
+            return 4
+        }
+        console.log(f());
+        var f = new Function("return 5")
+        console.log(f());
+        var f = function(){
+            return 6
+        }
+        console.log(f()); */
+
+        // 函数作用域的概念
+
+        /* var k = 1;
+        function t1() {
+            var k = 2;  // 局部变量 k
+            //function test(){ return k;}
+            //var test = function(){return k}
+            var test = new Function("return k")
+            console.log(test())
+        }
+
+        t1() */
+
+        function fact(num) {
+            if(num < 1) return 1
+            else return num * fact(num - 1)
+        }
+
+        //console.log(fact(5))
+
+        var F = fact
+        console.log(F(5))
+    </script>
+</body>
+</html>

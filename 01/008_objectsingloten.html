@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // Global  全局的 终极的 兜底的对象  (不存在)
+        
+        // encodeURI encodeURIComponent
+       
+
+        var url = 'http://www.baidu.com/cn'  
+
+        var str1 = encodeURI(url);  // %20  // (url: // 不会进行编码)
+
+        var str2 = encodeURIComponent(url) // 常用的方法  (任何不标准的文字都会进行编码)
+
+        console.log(str1)
+        console.log(str2)
+
+        // decodeURI decodeURIComponent
+
+        console.log(decodeURI(str1))
+        console.log(decodeURIComponent(str2))
+
+
+        // eval(string) 方法  无形的javascript 解析器
+
+        /* var str3 = 'var a = 10; var b = 20';
+        eval(str3)
+
+        console.log(a+b) */
+
+        /* var strobj = "{name:'z3', age: 20}"
+
+        var obj = eval('('+strobj+')')
+
+        console.log(obj) */
+
+        var str4 = 'Hello world';
+        var str5 = escape(str4);
+        console.log(str5)
+
+        var str6 = unescape(str5);
+        console.log(str6)
+
+    </script>
+</body>
+</html>

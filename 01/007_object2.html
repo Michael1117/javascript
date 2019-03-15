@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /* 利用js 的对象特性 实现数组去重 */
+        
+        var arr = [2,1,2,10,2,3,4,3,4,10,5,7,6,8,9,7,8,6];
+
+        // js 对象的特性  : 在js 对象中 key 永远不会重复
+
+        /* var obj = new Object();
+        obj.name = 'zs';
+        obj.age = 20;
+
+        console.log(obj.name)
+
+        obj.name = '王五';
+
+        console.log(obj.name) */
+
+        // 1. 把数组转成一个js 对象
+        // 2. 把数组中的值 变成js 对象当中的 key
+        // 3. 把这个对象 再还原成数组
+
+        function toObject(arr){
+            var obj = {};  // 私有对象
+            var j;
+            for(var i = 0, j = arr.length ; i < j; i++){
+                obj[arr[i]] = true
+            }
+            return obj;
+        }
+        // 把这个对象转成数组
+        function keys(obj) {
+            var arr = []; // 私有对象
+            for(var attr in obj) {
+                if(obj.hasOwnProperty(attr)){  //YUI 底层代码
+                    arr.push(attr)
+                }
+            }
+            return arr;
+        }
+        //综合的方法  去掉数组中的重复项
+        function uniq(newArr) {
+            return keys(toObject(newArr))
+        }
+
+        console.log(uniq(arr))
+    </script>
+</body>
+</html>

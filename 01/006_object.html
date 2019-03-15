@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /* 简单实现java 中的 map */
+        function Map() {
+            // private
+            var obj = {}   // 空的对象容器 , 呈装键值对
+            this.put = function(key, value) {
+                obj[key] = value;    // 把键值对绑定到obj 对象上
+            }
+            // size 方法 获得map 容器的个数
+            this.size = function() {
+                var count = 0;
+                for(var attr in obj) {
+                    count++
+                }
+                return count
+            }
+            // get方法 根据key 取得value
+            this.get = function(key){
+                if(obj[key] || obj[key] === false || obj[key] === 0 || obj[key] === 'NaN'|| obj[key] === '') {
+                    return obj[key]
+                }else{
+                    return null
+                }
+            }
+            // remove 删除方法
+            this.remove = function(key) {
+                if(obj[key] || obj[key] === false || obj[key] === 0 || obj[key] === 'NaN'|| obj[key] === '') {
+                    delete obj[key]
+                }else{
+
+                }
+            }
+
+            // eachMap 变量map 容器的方法
+            this.eachMap = function(fn) {
+                for(var attr in obj){
+                    fn(attr, obj[attr])
+                }
+            }
+        }
+
+        // 模拟java 里的 map 
+        var m = new Map();
+        m.put('01', 'Map'),
+        m.put('02','size'),
+        m.put('03','222')    
+
+        /* console.log(m.size())
+        m.remove('03')
+        console.log(m.get('03'))
+        console.log(m.size()) */
+
+        m.eachMap(function(key, value){
+            console.log(key +':'+ value)
+        })
+    </script>
+</body>
+</html>
