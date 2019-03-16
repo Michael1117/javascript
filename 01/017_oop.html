@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function Person(name, age, gender) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.sayName = function(){
+                console.log(this.name)
+            }
+        }
+
+        // 1. 当作构造函数去使用
+        var p1 = new Person('Michael', 18, '男');
+
+        //p1.sayName()
+        // 2. 当作普通函数去使用
+        Person('AA', 17, '女')  // 在全局环境里定义属性复制  直接定义在window 上
+
+        console.log(name)
+
+        // 3. 在另一个对象的作用域中调用
+        var o = new Object();
+
+        // call apply
+
+        Person.call(o, '小4', 19, '女')
+
+        console.log(o.name)
+    </script>
+</body>
+</html>

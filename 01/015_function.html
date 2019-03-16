@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // 垃圾收集 方法1 标记方法  方法2 引用计数
+        function test(){
+            var a = 10;  // 被使用
+            var b = 20;  // 被使用
+        }
+
+        test()  // 执行完毕 之后 a, b 又被标记了一次: 没有被使用
+    </script>
+</body>
+</html>
