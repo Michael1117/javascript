@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title></title>
+    <style type="text/css"></style>
+</head>
+<body>
+<script type="text/javascript">
+    // 原型的概念 ： 原型对象里的所有属性和方法 被所有构造函数实例化出来的对象所共享
+    /*function Person() {
+
+    }
+
+    Person.prototype = {
+        constructor: Person,
+        name: 'zs',
+        age: 20,
+        job: 'doctor',
+        friends: ['李四', '王五'],
+        sayName: function () {
+            console.log('我的名字');
+        }
+    }
+
+    var p1 = new Person();
+    var p2 = new Person();
+
+    p1.friends.push('赵六');
+
+    console.log(p1.friends);
+    console.log(p2.friends);*/
+
+    // 组合使用原型 和 构造函数 (定义一个类 开发时常用的方式)
+    /*function Person(name, age ,friends, job) {
+        this.name = name;
+        this.age = age;
+        this.friends = friends;
+        this.job = job
+    }
+
+    Person.prototype = {
+        constructor: Person,
+        sayName: function () {
+            console.log(this.name);
+        }
+    }
+
+    var p1 = new Person('zs', 20, ['AA','Jack'], 'Teacher');
+    var p2 = new Person('ls', 18, ['Bob',"Rose"], 'Doctor');
+
+    console.log(p1.friends);
+    p1.sayName()
+
+    console.log(p2.friends);
+    p2.sayName()*/
+
+    // 动态原型模式:(让你的代码 都封装到一起)
+    /*function Person(name, age ,friends, job) {
+        this.name = name;
+        this.age = age;
+        this.friends = friends;
+        this.job = job;
+
+        // 动态原型方法:
+        if( typeof this.sayName !== 'function') {
+            Person.prototype.sayName = function () {
+                console.log(this.name);
+            }
+        }
+    }*/
+
+    // 稳妥构造函数式: durable object(稳妥对象) 非常安全的环境中
+    // 1 没有公共属性  2 不能使用this 对象
+
+    function Person(name, age , job) {
+        // 创建一个要返回的对象
+        var obj = new Object();
+        // 可以定义一些私有的变量和函数 private
+        var gender = '男';
+        var name = name;
+
+        // 添加一个方法
+
+        obj.sayName = function () {
+            console.log(name);
+        }
+        return obj
+    }
+
+    var p1 = new Person('张三');
+    p1.sayName();
+</script>
+</body>
+</html>

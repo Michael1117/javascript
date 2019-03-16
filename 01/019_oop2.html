@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title></title>
+    <style type="text/css"></style>
+</head>
+<body>
+<script>
+    // Object.getPrototypeOf()  : 根据实例对象获取原型对象
+
+    function Person() {
+
+    }
+
+    Person.prototype.name = 'zs';
+    Person.prototype.age = 20;
+    Person.prototype.sayName = function () {
+        console.log('我是原型对象的方法!')
+    }
+
+    /*var p1 = new Person();
+
+    console.log(p1.name)
+
+    var prototypeObj = Object.getPrototypeOf(p1);
+
+    console.log(prototypeObj === Person.prototype)*/
+
+    /*
+    * 每次代码读取一个对象的属性的时候: 首先会进行一次搜索  搜索实例对象里 name 的属性 看看有没有
+    * 如果没有 再去p2 的实例所对应的原型对象里去搜索 name 属性 如果没有 返回undefined
+    * */
+    /*var p2 = new Person();
+    p2.name = 'w5';
+    console.log(p2.name);
+    delete p2.name
+    console.log(p2.name);*/
+
+    // 判断一个对象属性 是属于原型属性  还是实例属性
+    /*var p3 = new Person();
+    console.log(p3.name);
+
+    console.log(p3.hasOwnProperty('name'));*/
+
+
+    // in 操作符 : 判断属性 是否存在于实例对象 和 原型对象中
+
+    /*var p1 = new Person();
+
+    console.log('name' in p1);
+    var p2 = new Person();
+
+    p2.name = 'zz';
+    console.log('name' in p2);*/
+
+    // 判断一个属性  是否存在原型中
+    // 在原型对象中是否存在这个属性  参数1： 当前对象 参数2： 要判断的属性
+    /*function hasPrototypeProperty(object, name) {
+        return !object.hasOwnProperty(name) && name in object;  // true 原型对象的属性
+    }
+
+    var p3 = new Person();
+    console.log(hasPrototypeProperty(p3, 'name'));
+
+    p3.name = 'zs'
+    console.log(hasPrototypeProperty(p3, 'name'));*/
+
+
+    // ECMA5 新特性 Object.keys();
+
+    /*var p1 = new Person();
+    p1.name = 'zs';
+
+    p1.age = 18;
+
+    var attribute = Object.keys(p1);
+    console.log(attribute);
+
+    var attr2 = Object.keys(Person.prototype)
+
+    console.log(attr2);*/
+
+    // ECMA5 constructor属性 ： 该属性是不能被枚举的
+
+    console.log(Object.getOwnPropertyNames(Person.prototype));  // 枚舉所有属性 不管该内部属性是否能被枚举
+
+
+
+</script>
+</body>
+</html>
