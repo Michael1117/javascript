@@ -8,6 +8,69 @@
 </head>
 <body>
 <script type="text/javascript">
+    // 单体模式 (singleton)
+
+    // 1 简单单体模式
+
+   /* var Singleton = {
+        attr1: true,
+        attr2: 10,
+        method1: function () {
+            console.log('我是方法1');
+        },
+        method2: function () {
+            console.log('我是方法2');
+        }
+    }
+
+    console.log(Singleton.attr1);*/
+
+    // 补充： 划分命名空间
+    /*var Name = {};
+    Name.Singleton = {
+        attr1: true,
+        attr2: 10,
+        method1: function () {
+            console.log('我是方法1');
+        },
+        method2: function () {
+            console.log('我是方法2');
+        }
+    }
+
+    Name.Singleton.method1()
+*/
+    // 2 借用闭包创建单体  闭包主要的目的  保护数据
+
+    // 命名空间
+    var BHX = {}
+
+    BHX.Singleton = (function () {
+        // 添加自己的私有成员
+        var a1 = true;
+        var a2 = 10;
+        var f1 = function () {
+            console.log('f1');
+        }
+
+        var f2 = function () {
+            console.log('f2');
+        }
+        // 把块级作用域里的执行结果赋值给我的单体对象
+        return {
+            attr1: true,
+            attr2: 10,
+            method1: function () {
+                console.log('我是方法1');
+            },
+            method2: function () {
+                console.log('我是方法2');
+            }
+        }
+    })()
+
+    console.log(BHX.Singleton.attr1);
+    BHX.Singleton.method1();
 
 </script>
 </body>
