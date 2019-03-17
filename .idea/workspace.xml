@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8576daad-6504-4411-aeae-52b17127da16" name="Default Changelist" comment="prototype">
-      <change afterPath="$PROJECT_DIR$/01/023_oop7.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/01/024_oop8.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/01/025_oop9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01/027_design2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01/029_design_singleton.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01/26_design1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01/28_design3.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01/022_oop6.html" beforeDir="false" afterPath="$PROJECT_DIR$/01/022_oop6.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01/01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/01/01.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,35 +28,82 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="11" />
+          <entry key="html" value="15" />
+          <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="11" />
+          <entry key="HTML" value="15" />
+          <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="5749" />
-          <entry key="txt" value="16" />
+          <entry key="html" value="8046" />
+          <entry key="txt" value="565" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="5749" />
-          <entry key="PLAIN_TEXT" value="16" />
+          <entry key="HTML" value="8046" />
+          <entry key="PLAIN_TEXT" value="565" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/01/025_oop9.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
+            <state relative-caret-position="485">
               <caret line="54" column="36" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/01/01.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/01/26_design1.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="485">
+              <caret line="35" column="49" lean-forward="true" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/01/027_design2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="485">
+              <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/01/28_design3.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="77">
+              <caret line="68" selection-start-line="65" selection-start-column="4" selection-end-line="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/01/029_design_singleton.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -82,6 +130,11 @@
         <option value="$PROJECT_DIR$/01/023_oop7.html" />
         <option value="$PROJECT_DIR$/01/024_oop8.html" />
         <option value="$PROJECT_DIR$/01/025_oop9.html" />
+        <option value="$PROJECT_DIR$/01/26_design1.html" />
+        <option value="$PROJECT_DIR$/01/027_design2.html" />
+        <option value="$PROJECT_DIR$/01/28_design3.html" />
+        <option value="$PROJECT_DIR$/01/01.txt" />
+        <option value="$PROJECT_DIR$/01/029_design_singleton.html" />
       </list>
     </option>
   </component>
@@ -152,7 +205,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552713170906</updated>
-      <workItem from="1552713176464" duration="14136000" />
+      <workItem from="1552713176464" duration="20259000" />
     </task>
     <task id="LOCAL-00001" summary="prototype">
       <created>1552713250182</created>
@@ -172,7 +225,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14136000" />
+    <option name="totallyTimeSpent" value="20259000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -259,8 +312,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/01/025_oop9.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
+        <state relative-caret-position="485">
           <caret line="54" column="36" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01/26_design1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="35" column="49" lean-forward="true" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01/027_design2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01/28_design3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="68" selection-start-line="65" selection-start-column="4" selection-end-line="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01/01.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01/029_design_singleton.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
         </state>
       </provider>
     </entry>

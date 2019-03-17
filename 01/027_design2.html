@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title></title>
+    <style type="text/css"></style>
+</head>
+<body>
+<script type="text/javascript">
+    // 2 属性检测法
+
+    /*interface Composite{
+        function add() {
+
+        }
+
+        function remove() {
+
+        }
+
+        function update() {
+
+        }
+    }*/
+
+    var CompositeImpl = function () {
+
+        // 显示的在类的内部 接收所实现的接口
+        // 一般来说是一个规范 我们项目经理: 在类的内部定义一个变量 (名字固定)
+        this.implementsInterfaces = ['Composite', 'FormItem']
+
+    }
+
+    CompositeImpl.prototype.add = function(obj){}
+    CompositeImpl.prototype.remove = function(obj){}
+    CompositeImpl.prototype.update = function(obj){}
+    CompositeImpl.prototype.select = function(obj){}
+
+    function CheckCompositeImpl(instance) {
+        // boolean 判断当前对象是否实现了所有接口
+        if() {
+
+        }
+    }
+</script>
+</body>
+</html>
