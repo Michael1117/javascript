@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title></title>
+    <style type="text/css">
+    </style>
+</head>
+<body>
+<script type="text/javascript" src="./common/CommonUtil.js"></script>
+
+<script type="text/javascript">
+    // 细粒度 和 粗粒度
+    // 万物皆对象  :
+    // 你要买什么车？ 去什么商店 -> 买车的商店 -> 卖车   生产车 -> Factory
+    // 搭建一个工厂的环境
+    // 卖车的商店
+
+    // Super Shop 卖车
+    // abstract Class === ? java的抽象类  ()
+    /*
+    * this CarShop is a abstract
+    *
+    * */
+    function CarShop() {}
+    CarShop.prototype = {
+        constructor: CarShop,
+        sellCar: function (type) {
+            // 销售人员...
+
+            this.abstractSellCar(type)
+        },
+        abstractSellCar: function () {
+            throw new Error('this method is abstract')
+        }
+    }
+
+    // Benz 4s 店
+    function BenzCarShop() {}
+    MH.extend(BenzCarShop, CarShop)
+    BenzCarShop.prototype = {
+        constructor: BenzCarShop,
+        sellCar: function (type) {
+
+            var car ; // 声明一个变量
+            var types = ['Benz', 'benz300']  // 所有benz 类型的汽车
+
+            for (t in types) {
+                // 如果我的商店里有你想要的汽车型号
+                if(types[t] === type){
+                    car = CarFactory.createCar(type)
+                } else {
+                    console.log('没有你要的类型');
+                }
+            }
+
+            return car
+            // 销售人员...
+            //var car = CarFactory.createCar(type);
+            // 保险 相关的售后服务
+            //return car;
+        }
+    }
+    // 宝马 4s 店
+    function BmwCarShop() {}
+
+    MH.extend(BmwCarShop, CarShop)
+
+    BmwCarShop.prototype = {
+        constructor: BmwCarShop,
+        sellCar: function (type) {
+            var car ; // 声明一个变量
+            var types = ['Bmw', 'Bmw300']  // 所有benz 类型的汽车
+
+            for (t in types) {
+                // 如果我的商店里有你想要的汽车型号
+                if(types[t] === type){
+                    car = CarFactory.createCar(type)
+                } else {
+                    console.log('没有你要的类型');
+                }
+            }
+
+            return car
+            //var car = CarFactory.createCar(type);
+            // 保险 相关的售后服务
+            //return car;
+        }
+    }
+    //  生产车的工厂  目的就是为了生产车
+    // 单体模式 动态工厂模式
+    var CarFactory = {
+        createCar: function (type) {
+            //var car;  // 声明一个变量
+            /*switch (type) {
+                case 'Benz':
+                    car = new Benz();
+                    break;
+                case 'Bmw':
+                    car = new Bmw();
+                    break;
+                case 'Audi':
+                    car = new Audi();
+                    break;
+                default: 'not buy it';
+            }*/
+            // 利用eval 动态创建传入类型的实例对象
+            var car = eval('new ' + type + '()')  // 例如  var car = new Benz();
+            // 检验接口的实现
+            MH.Interface.ensureImplements(car, CarInterface)
+            return car;
+        }
+
+    };
+    // 接口对象的实例
+    var CarInterface = new MH.Interface('CarInterface',['start', 'run'])
+    // Class bens bmw audi
+    // SuperClass implements CarInterface
+
+    function BaseCar() {}
+
+    BaseCar.prototype = {
+        constructor: BaseCar,
+        start: function () {
+            console.log(this.constructor);
+            console.log(this.constructor.name + '..start');
+        },
+        run: function () {
+            console.log(this.constructor.name + '...run');
+        }
+    }
+    function Benz() {}
+    function Bmw() {}
+    function Audi() {}
+
+    MH.extend(Benz, BaseCar)
+    MH.extend(Bmw, BaseCar)
+    MH.extend(Audi, BaseCar)
+
+    Benz.prototype.driveBenz = function () {
+        console.log("Benz drive");
+    }
+    Bmw.prototype.driveBenz = function () {
+        console.log("Bmw drive");
+    }
+    Audi.prototype.driveBenz = function () {
+        console.log("Audi drive");
+    }
+    /*var shop = new CarShop();
+
+    var car = shop.sellCar('Benz')
+    //shop.sellCar('Benz')
+    car.start();
+    car.run()
+    car.driveBenz()*/
+
+    var shop1 = new BenzCarShop();
+    var car1 = shop1.sellCar('Benz')
+    car1.run()
+
+    var shop2 = new BmwCarShop();
+    var car2 = shop2.sellCar('Bmw')
+    car2.run()
+</script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script type="text/javascript" src="./common/CommonUtil.js"></script>
+
+<script type="text/javascript">
+    // 搭建一个工厂的环境
+    // 卖车的商店
+    function CarShop() {
+    }
+    CarShop.prototype = {
+        constructor: CarShop,
+        sellCar: function (type) {
+            var car;  // 声明一个变量
+            switch (type) {
+                case 'Benz':
+                    car = new Benz();
+                    break;
+                case 'Bmw':
+                    car = new Bmw();
+                    break;
+                case 'Audi':
+                    car = new Audi();
+                    break;
+                default: 'not buy it';
+
+            }
+            // 检验接口的实现
+            MH.Interface.ensureImplements(car, CarInterface)
+
+            return car;
+        }
+    }
+
+    // 接口对象的实例
+    var CarInterface = new MH.Interface('CarInterface',['start', 'run'])
+    // Class bens bmw audi
+    // SuperClass implements CarInterface
+
+    function BaseCar() {
+
+    }
+
+    BaseCar.prototype = {
+        constructor: BaseCar,
+        start: function () {
+            console.log(this.constructor);
+            console.log(this.constructor.name + '..start');
+        },
+        run: function () {
+            console.log(this.constructor.name + '..run');
+        }
+    }
+    function Benz() {
+
+    }
+
+    /*Benz.prototype.start = function () {
+        console.log('Benz start');
+    }
+
+    Benz.prototype.run = function () {
+        console.log('Benz run');
+    }
+*/
+    function Bmw() {
+
+    }
+
+
+    /*Bmw.prototype.start = function () {
+        console.log('Bmw start');
+    }
+
+    Bmw.prototype.run = function () {
+        console.log('Bmw run');
+    }*/
+
+    function Audi() {
+
+    }
+
+/*
+
+    Audi.prototype.start = function () {
+        console.log('Audi start');
+    }
+
+    Audi.prototype.run = function () {
+        console.log('Audi run');
+    }
+*/
+
+    MH.extend(Benz, BaseCar)
+    MH.extend(Bmw, BaseCar)
+    MH.extend(Audi, BaseCar)
+
+    Benz.prototype.driveBenz = function () {
+        console.log("Benz drive");
+    }
+
+    Bmw.prototype.driveBenz = function () {
+        console.log("Bmw drive");
+    }
+    Audi.prototype.driveBenz = function () {
+        console.log("Audi drive");
+    }
+
+    var shop = new CarShop();
+
+    var car = shop.sellCar('Benz')
+    //shop.sellCar('Benz')
+    car.start();
+    car.run()
+    car.driveBenz()
+
+</script>
+</body>
+</html>
